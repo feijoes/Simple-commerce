@@ -29,6 +29,10 @@ const Register = () => {
     <div className="footer">
         <button type="submit" className="btn btn-primary">Register</button>
     </div>
+    <br></br>
+    <div>
+        
+    </div>
 </div>      
   );
 };

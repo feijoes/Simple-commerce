@@ -1,26 +1,29 @@
 import React, {useState} from "react";
-import Popup from './Popup';
-import Register from './Register'
-import Login from "./Login";
+
 import data from '../data';
 import Product from "./Product";
+import Filter from "./Filter";
+
 const Home = () => {
-    const [register, setIsOpen] = useState(false);
-    const [login, setLogin] = useState(false);
-   
+    const [products, setfilter] = useState(data)
+    
     return <div  className="App container">
-      
-      <Popup content={<Login />} set={setLogin} name={login}/>
-      <Popup content={<Register />}  set={setIsOpen} name={register}/>
+     
+     
       <div className="">
         <main className="block">
-          <h2>Products</h2>
+          <h3>Products</h3>
           <div className="row">
-            {data.map((product) => (
+            <Filter name="All"   set={setfilter} value="all"/>
+            <Filter name="Moda"  set={setfilter} value="moda"/>
+            <Filter name="Tecnologia"  set={setfilter} value="tecnologia"/>
+            <Filter name="Otro" set={setfilter} value="other"/>
+          </div>
+          <div className="container main-content">
+            {products.map((product) => (
                 <Product key={product.id} product={product}></Product>))}
           </div>
         </main>
-        <div><h1>gay</h1></div>
       </div>
     </div>
 };

@@ -1,12 +1,13 @@
-import React from 'react'
+import React  from 'react'
 
-const Login = () => {
+const Login = props => {
+  const open = () => {props.set(!props.name)}
   return (
     <>
     <form>
   <div className="mb-3">
-    <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+    <label htmlFor="email" className="form-label">Email address</label>
+    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div className="mb-3">
@@ -14,8 +15,9 @@ const Login = () => {
     <input type="password" className="form-control" id="password" />
   </div>
   
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="btn btn-primary">Login</button>
 </form>
+<div onClick={open}className="cursor"><p>Register</p></div>
 </>
   );
 };
