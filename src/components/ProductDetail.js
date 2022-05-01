@@ -13,7 +13,8 @@ function ProductDetail() {
             <Link to="/">Home</Link>
         </nav>
         <img src={thisProduct.image} alt={thisProduct.image} height="300" />
-        <h4>{thisProduct.name}</h4>
+        <h3>{thisProduct.name}</h3>
+        <h4>description</h4>
         <p>{thisProduct.description}</p>
         {thisProduct.price}
       <button className=''>comprar</button>
